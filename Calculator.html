@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+			Calculator Demo using AngularJS
+		</title>
+		<link rel="stylesheet" href="Calculator.css">
+	</head>
+
+	<body ng-app="myApp">
+		<form class="calc" ng-controller="MyCtrl">
+			<p class="calc-display">
+				<input type="text" name="output" id="res" value="{{output}}" class="calc-display-input">
+			</p>
+			<p class="operators">
+				<button type="button" class="calc-button calc-button-red calc-button-big" ng-click='operate("/")' >&divide;</button>
+				<button type="button" class="calc-button calc-button-red calc-button-big" ng-click='operate("*")' >&times;</button>
+				<button type="button" class="calc-button calc-button-red calc-button-big" ng-click='operate("-")' >&minus;</button>
+				<button type="button" class="calc-button calc-button-red calc-button-big" ng-click='operate("+")' >&#43;</button>
+			</p>
+				<p class="calc-row">
+				<button type="button" class="calc-button" ng-click="updateOutput($index)" ng-repeat="n in [0,1,2,3,4,5,6,7,8,9]">{{n}}</button>
+				<button type="button" class="calc-button" ng-click="updateOutput('.')">.</button>
+				<button type="button" class="calc-button" ng-click='output = 0'>C</button>
+			</p>
+			<p class="calc-row"><button type="button" class="calc-button calc-button-yellow calc-button-big" ng-click="equal()">=</button></p>
+		</form>
+	</body>
+ 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="Calculator.js"></script>
+ </html>
